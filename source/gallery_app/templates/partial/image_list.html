@@ -5,7 +5,7 @@
             <h5 class="card-title">{{ image.note }}</h5>
             <p class="card-text">{{ image.author }}</p>
         </div>
-        <img class="card-img-bottom" src="/uploads/{{ post.image }}" alt="Card image cap">
+        <img class="card-img-bottom" src="/uploads/{{ image.image }}" alt="Card image cap">
         {% if user.is_authenticated and user == post.user %}
             <p><a href="{% url 'post_update' post.pk %}" class="btn btn-success">Update</a></p>
             <p><a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a></p>

@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
 
 from .images import Image
@@ -6,7 +6,7 @@ from .images import Image
 
 class Favorite(models.Model):
     user = models.ForeignKey(
-        to=User,
+        settings.AUTH_USER_MODEL,
         related_name='favorite_images',
         verbose_name='Избранное',
         null=False,

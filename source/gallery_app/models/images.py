@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
@@ -14,8 +14,8 @@ class Image(models.Model):
         null=True,
         verbose_name="Описание поста"
     )
-    author = models.ForeignKey(
-        to=User,
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
         related_name='user',
         verbose_name='Пользователь',
         null=False,
