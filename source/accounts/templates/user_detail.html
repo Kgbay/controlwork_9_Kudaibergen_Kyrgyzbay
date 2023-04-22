@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Пользователь{% endblock %}
+{% block content %}
 <div class="container">
-    {% block content %}
     {% if user_obj.profile.avatar %}
     <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250" height="250" alt="user picture">
     {% endif %}
@@ -10,7 +10,6 @@
     <p>Фамилия: {{ user_obj.last_name }}</p>
     <a href="{% url 'change' user_obj.pk %}" class="btn btn-primary">Редактировать</a>
     <a href="{% url 'password_change' user_obj.pk %}" class="btn btn-primary">Смена пароля</a>
-
-    {% include 'partial/post_list.html' %}
-    {% endblock %}
+    {% include 'partial/image_list.html' %}
 </div>
+{% endblock %}

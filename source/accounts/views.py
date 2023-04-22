@@ -69,7 +69,7 @@ class UserPasswordChangeView(UserPassesTestMixin, UpdateView):
         return self.request.user == self.get_object()
 
     def get_success_url(self):
-        return reverse('login_applicant')
+        return reverse('login')
 
 
 class UserChangeView(UserPassesTestMixin, UpdateView):

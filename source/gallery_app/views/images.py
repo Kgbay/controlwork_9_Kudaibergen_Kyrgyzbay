@@ -41,7 +41,7 @@ class ImageUpdateView(LoginRequiredMixin, UpdateView):
     model = Image
 
     def get_success_url(self):
-        return reverse('post_view', kwargs={'pk': self.object.pk})
+        return reverse('image_view', kwargs={'pk': self.object.pk})
 
     def dispatch(self, request, *args, **kwargs):
         obj = self.get_object()

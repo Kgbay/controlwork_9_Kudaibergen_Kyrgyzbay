@@ -10,6 +10,7 @@ class ImageForm(forms.ModelForm):
         model = Image
         fields = ('image', 'note')
         widgets = {
+            'image': forms.TextInput(attrs={'class': 'form-control'}),
             'note': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
         }
         labels = {

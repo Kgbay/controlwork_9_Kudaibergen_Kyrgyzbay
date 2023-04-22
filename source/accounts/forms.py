@@ -39,9 +39,6 @@ class CustomUserCreationForm(forms.ModelForm):
         fields = (
             'username', 'email', 'password', 'password_confirm', 'avatar', 'phone_number'
         )
-        labels = {
-            'avatar': 'Аватар'
-        }
 
     def clean(self):
         cleaned_data = super().clean()
