@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Task view{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="images-card">
+        <div class="card">
+            <div class="card-body">
+                <h3>Описание: {{ image.note }}</h3>
+                <p>Пользователь: {{ image.user }}<br>
+                    <a href="{% url 'index' %}" class="btn btn-success">Назад</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

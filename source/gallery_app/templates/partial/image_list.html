@@ -1,0 +1,17 @@
+<div class="container">
+    {% for image in images %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ image.note }}</h5>
+            <p class="card-text">{{ image.author }}</p>
+        </div>
+        <img class="card-img-bottom" src="/uploads/{{ post.image }}" alt="Card image cap">
+        {% if user.is_authenticated and user == post.user %}
+            <p><a href="{% url 'post_update' post.pk %}" class="btn btn-success">Update</a></p>
+            <p><a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a></p>
+        {% endif %}
+    </div>
+    {% empty %}
+    <h2 class="text-center">Пусто</h2>
+    {% endfor %}
+</div>
